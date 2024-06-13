@@ -1,14 +1,25 @@
 
-# Setup Docker Laravel 10 com PHP 8.1
+# Setup Docker Para Projetos Laravel (+9) (com Swoole + Octane)
 [Assine a Academy, e Seja VIP!](https://academy.especializati.com.br)
 
 ### Passo a passo
 Clone Repositório
 ```sh
-git clone -b laravel-10-com-php-8.1 https://github.com/especializati/setup-docker-laravel.git app-laravel
+git clone -b production https://github.com/especializati/setup-docker-laravel.git
+```
+
+Clone os Arquivos do Laravel
+```sh
+git clone https://github.com/laravel/laravel.git app-laravel
+```
+
+
+Copie os arquivos docker-compose.yml, Dockerfile e o diretório docker/ para o seu projeto
+```sh
+cp -rf setup-docker-laravel/* app-laravel/
 ```
 ```sh
-cd app-laravel
+cd app-laravel/
 ```
 
 
@@ -24,11 +35,11 @@ APP_NAME="Especializa Ti"
 APP_URL=http://localhost:8989
 
 DB_CONNECTION=mysql
-DB_HOST=db
+DB_HOST=mysql
 DB_PORT=3306
-DB_DATABASE=laravel
-DB_USERNAME=root
-DB_PASSWORD=root
+DB_DATABASE=nome_que_desejar_db
+DB_USERNAME=nome_usuario
+DB_PASSWORD=senha_aqui
 
 CACHE_DRIVER=redis
 QUEUE_CONNECTION=redis
@@ -37,6 +48,8 @@ SESSION_DRIVER=redis
 REDIS_HOST=redis
 REDIS_PASSWORD=null
 REDIS_PORT=6379
+
+OCTANE_SERVER=swoole
 ```
 
 
